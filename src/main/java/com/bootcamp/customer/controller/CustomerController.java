@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bootcamp.customer.entity.CustomerByNumDocRequest;
 import com.bootcamp.customer.model.Customer;
-import com.bootcamp.customer.service.impl.CustomerServiceImpl;
+import com.bootcamp.customer.service.CustomerService;
 
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
@@ -26,7 +26,7 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/Customer")
 public class CustomerController {
 
-	private final CustomerServiceImpl customerService;
+	private final CustomerService customerService;
 
     @GetMapping
     public Mono<ResponseEntity<Flux<Customer>>>getAllCustomer() {
